@@ -1,0 +1,500 @@
+[mavanica@localhost ~]$ cat software.sh 
+#!/bin/bash  
+
+#########################################
+#  					                    #
+#  NAME:  Marco Vargas			        #
+#  DATE:  April, 14, 2021		        #
+#  Prof:  Devki Nandan			        #
+#  Class: CSC 245-60			        #
+#					                    #
+#  Program: software.sh			        #
+#					                    #
+#					                    #
+#########################################
+
+clear
+echo
+hour=$(date | cut -c12-13)
+if [ "$hour" -ge 0 -a "$hour" -le 11 ]
+then 
+	echo " Good morning!"
+else
+	if [ "$hour" -ge 12 -a "$hour" -le 17 ]
+	then 
+		echo " Good afternoon"
+	else
+		echo " Good evening!"
+	fi
+fi
+
+echo
+echo " Today is" $(date | cut -c1-10)
+echo " The time is now" $(date | cut -c12-22)
+echo
+
+echo -e " Start of Program"
+echo -e " ----------------\n"
+echo -e "\tWelcome to Software Solutions Inc.\n"
+echo -e 
+
+echo -e " We offer great discounts to our customers based"
+echo -e " on the quantity they purchase from us.\n"
+echo -e " How many of our product are you purchasing today?\n"
+echo -n " Enter Quantity [0 - 100]: "
+read QTY
+echo
+
+if [ -z $QTY ] || [ $QTY -lt 0 ] 
+then
+echo -e " Usage: You either entered a blank value, or a number less than 0.\n"
+echo -e " Please try again and enter a positive integer value.\n"
+
+exit 1
+fi
+
+if [ $QTY -ge 0 ] && [ $QTY -le 9 ]
+then 
+echo " Sorry! There are no discounts on purchases less than 10 Qty."
+
+elif [ $QTY -ge 10 ] && [ $QTY -le 19 ]
+then
+echo " Good news! Your discout is 20 dollars."
+
+elif [ $QTY -ge 20 ] && [ $QTY -le 49 ]
+then
+echo " Great news! Your discount is 30 dollars."
+
+elif [ $QTY -ge 50 ] && [ $QTY -le 99 ]
+then
+echo " Awsome news! Your discount is 40 dollars."
+
+elif [ $QTY -eq 100 ] || [ $QTY -gt 100 ]
+then
+echo " Excellent news! Your discount is 50 dollars."
+
+fi
+
+echo
+echo -e " ** END OF PROGRAM **"
+echo
+[mavanica@localhost ~]$ 
+
+Good morning!
+
+ Today is Wed Apr 14
+ The time is now 03:07:08 PM
+
+ Start of Program
+ ----------------
+
+	Welcome to Software Solutions Inc.
+
+
+ We offer great discounts to our customers based
+ on the quantity they purchase from us.
+
+ How many of our product are you purchasing today?
+
+ Enter Quantity [0 - 100]: 
+
+ Usage: You either entered a blank value, or a number less than 0.
+
+ Please try again and enter a positive integer value.
+
+[mavanica@localhost ~]$ 
+
+
+OUTPUT #1
+---------
+Good morning!
+
+ Today is Wed Apr 14
+ The time is now 03:08:40 PM
+
+ Start of Program
+ ----------------
+
+	Welcome to Software Solutions Inc.
+
+
+ We offer great discounts to our customers based
+ on the quantity they purchase from us.
+
+ How many of our product are you purchasing today?
+
+ Enter Quantity [0 - 100]: 5
+
+ Sorry! There are no discounts on purchases less than 10 Qty.
+
+ ** END OF PROGRAM **
+
+[mavanica@localhost ~]$ 
+
+
+OUTPUT #2
+---------
+Good morning!
+
+ Today is Wed Apr 14
+ The time is now 03:09:17 PM
+
+ Start of Program
+ ----------------
+
+	Welcome to Software Solutions Inc.
+
+
+ We offer great discounts to our customers based
+ on the quantity they purchase from us.
+
+ How many of our product are you purchasing today?
+
+ Enter Quantity [0 - 100]: 10
+
+ Good news! Your discout is 20 dollars.
+
+ ** END OF PROGRAM **
+
+[mavanica@localhost ~]$ 
+
+
+OUTPUT #3
+---------
+Good morning!
+
+ Today is Wed Apr 14
+ The time is now 03:10:50 PM
+
+ Start of Program
+ ----------------
+
+	Welcome to Software Solutions Inc.
+
+
+ We offer great discounts to our customers based
+ on the quantity they purchase from us.
+
+ How many of our product are you purchasing today?
+
+ Enter Quantity [0 - 100]: 49
+
+ Great news! Your discount is 30 dollars.
+
+ ** END OF PROGRAM **
+
+[mavanica@localhost ~]$ 
+
+
+OUTPUT #4
+---------
+Good morning!
+
+ Today is Wed Apr 14
+ The time is now 03:11:51 PM
+
+ Start of Program
+ ----------------
+
+	Welcome to Software Solutions Inc.
+
+
+ We offer great discounts to our customers based
+ on the quantity they purchase from us.
+
+ How many of our product are you purchasing today?
+
+ Enter Quantity [0 - 100]: 99
+
+ Awsome news! Your discount is 40 dollars.
+
+ ** END OF PROGRAM **
+
+[mavanica@localhost ~]$ 
+
+
+OUTPUT #5
+---------
+Good morning!
+
+ Today is Wed Apr 14
+ The time is now 03:12:33 PM
+
+ Start of Program
+ ----------------
+
+	Welcome to Software Solutions Inc.
+
+
+ We offer great discounts to our customers based
+ on the quantity they purchase from us.
+
+ How many of our product are you purchasing today?
+
+ Enter Quantity [0 - 100]: 102
+
+ Excellent news! Your discount is 50 dollars.
+
+ ** END OF PROGRAM **
+
+[mavanica@localhost ~]$ 
+
+####################### PROGRAM: SPEED.SH ###########################
+
+
+[mavanica@localhost ~]$ cat speed.sh 
+#!/bin/bash 
+
+#########################################
+#  					                    #
+#  NAME:  Marco Vargas			        #
+#  DATE:  April, 14, 2021		        #
+#  Prof:  Devki Nandan			        #
+#  Class: CSC 245-60			        #
+#					                    #
+#  Program: speed.sh			        #
+#					                    #
+#					                    #
+#########################################
+
+clear
+echo
+hour=$(date | cut -c12-13)
+if [ "$hour" -ge 0 -a "$hour" -le 11 ]
+then 
+	echo " Good morning!"
+else
+	if [ "$hour" -ge 12 -a "$hour" -le 17 ]
+	then 
+		echo " Good afternoon"
+	else
+		echo " Good evening!"
+	fi
+fi
+
+echo
+echo " Today is" $(date | cut -c1-10)
+echo " The time is now" $(date | cut -c12-22)
+echo
+
+echo -e " Start of Program"
+echo -e " ----------------\n"
+echo -e "\tWelcome to Physics & Engineering Department.\n"
+echo -e 
+
+
+echo -e " Let's figure out the relationship of speed against"
+echo -e " a natural medium such as Air, Water, and Steel\n"
+echo -e " Select a number between 1 and 3
+	
+	  1) Air
+	  2) Water
+	  3) Steel
+	  *) Exit"
+
+echo
+echo -e " Enter your choice:"
+read ANS
+
+case $ANS in
+
+1) echo -e "\tYou have selected Air.\n"
+
+   echo -e " Please enter a distance value in feets: \n"
+   read DIST
+   echo -e "\tYou have entered a distance of $DIST feet.\n"
+
+   time=$(($DIST/1100))
+   
+	
+   echo " scale=4; $DIST / 1100" | bc   
+   echo " The amount of time sound travels thru Air is approximately: $time ft\sec." 
+   echo 
+   echo -e "\t\t** Good Bye!!! **\n"
+   ;;
+
+2) echo -e "\tYou have selected Water.\n"
+
+   echo -e " Please enter a distance value in feets: \n"
+   read DIST
+   echo -e "\tYou entered a distance of $DIST feet.\n"
+
+   time=$(($DIST/4900))
+
+
+   echo " scale=4; $DIST / 4900" | bc 
+   echo " The amount of time sound travels thru Water is approximately: $time ft\sec."
+   echo
+   echo -e "\t\t** Good Bye!!! **\n"
+   ;;
+
+3) echo -e "\tYou have selected Steel.\n"
+
+   echo -e " Please enter a distance value in feets: \n"
+   read DIST
+   echo -e "\tYou entered a distance of $DIST feet.\n"
+
+   time=$(($DIST/16400))
+
+
+   echo " scale=4; $DIST / 16400" | bc 
+   echo " The amount of time sound travels thru Water is approximately: $time ft\sec."
+   echo
+   echo -e "\t\t** Good Bye!!! **\n"
+   ;;
+*) echo -e "\t`basename $0`: This is not between 1 and 3. \n" >&2
+   echo -e "\t\t ** Please try again!!! **\n"
+exit 1
+;;
+
+esac
+[mavanica@localhost ~]$ 
+
+
+OUTPUT #1
+---------
+Good morning!
+
+ Today is Wed Apr 14
+ The time is now 03:20:36 PM
+
+ Start of Program
+ ----------------
+
+	Welcome to Physics & Engineering Department.
+
+
+ Let's figure out the relationship of speed against
+ a natural medium such as Air, Water, and Steel
+
+ Select a number between 1 and 3
+	
+	  1) Air
+	  2) Water
+	  3) Steel
+	  *) Exit
+
+ Enter your choice:
+1
+	You have selected Air.
+
+ Please enter a distance value in feets: 
+
+80000
+	You have entered a distance of 80000 feet.
+
+72.7272
+ The amount of time sound travels thru Air is approximately: 72 ft\sec.
+
+		** Good Bye!!! **
+
+[mavanica@localhost ~]$ 
+
+OUTPUT #2
+---------
+Good morning!
+
+ Today is Wed Apr 14
+ The time is now 03:22:38 PM
+
+ Start of Program
+ ----------------
+
+	Welcome to Physics & Engineering Department.
+
+
+ Let's figure out the relationship of speed against
+ a natural medium such as Air, Water, and Steel
+
+ Select a number between 1 and 3
+	
+	  1) Air
+	  2) Water
+	  3) Steel
+	  *) Exit
+
+ Enter your choice:
+2
+	You have selected Water.
+
+ Please enter a distance value in feets: 
+
+80000
+	You entered a distance of 80000 feet.
+
+16.3265
+ The amount of time sound travels thru Water is approximately: 16 ft\sec.
+
+		** Good Bye!!! **
+
+[mavanica@localhost ~]$ 
+
+OUTPUT #3
+---------
+Good morning!
+
+ Today is Wed Apr 14
+ The time is now 03:24:36 PM
+
+ Start of Program
+ ----------------
+
+	Welcome to Physics & Engineering Department.
+
+
+ Let's figure out the relationship of speed against
+ a natural medium such as Air, Water, and Steel
+
+ Select a number between 1 and 3
+	
+	  1) Air
+	  2) Water
+	  3) Steel
+	  *) Exit
+
+ Enter your choice:
+3
+	You have selected Steel.
+
+ Please enter a distance value in feets: 
+
+80000
+	You entered a distance of 80000 feet.
+
+4.8780
+ The amount of time sound travels thru Water is approximately: 4 ft\sec.
+
+		** Good Bye!!! **
+
+[mavanica@localhost ~]$ 
+
+OUTPUT #4
+---------
+Good morning!
+
+ Today is Wed Apr 14
+ The time is now 03:27:19 PM
+
+ Start of Program
+ ----------------
+
+	Welcome to Physics & Engineering Department.
+
+
+ Let's figure out the relationship of speed against
+ a natural medium such as Air, Water, and Steel
+
+ Select a number between 1 and 3
+	
+	  1) Air
+	  2) Water
+	  3) Steel
+	  *) Exit
+
+ Enter your choice:
+y
+	speed.sh: This is not between 1 and 3. 
+
+		 ** Please try again!!! **
+
+[mavanica@localhost ~]$ 
